@@ -27,6 +27,7 @@
             android:value="@string/google_API_key" />
 
         <activity android:name=".MapActivity"></activity>
+        <service android:name=".GeofenceTransitionsIntentService"/>
     </application>
 
 </manifest>

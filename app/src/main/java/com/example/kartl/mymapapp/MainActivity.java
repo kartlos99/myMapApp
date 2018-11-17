@@ -31,37 +31,8 @@ public class MainActivity extends AppCompatActivity {
         }
 
         final TextView textView = findViewById(R.id.tview);
-
         EditText editText = findViewById(R.id.etext);
-        editText.setKeyListener(new KeyListener() {
-            @Override
-            public int getInputType() {
-                return 0;
-            }
 
-            @Override
-            public boolean onKeyDown(View view, Editable editable, int i, KeyEvent keyEvent) {
-                textView.append(keyEvent.toString());
-                Toast.makeText(getApplicationContext(), "kay_ID : "+i, Toast.LENGTH_SHORT).show();
-                return false;
-            }
-
-            @Override
-            public boolean onKeyUp(View view, Editable editable, int i, KeyEvent keyEvent) {
-                return false;
-            }
-
-            @Override
-            public boolean onKeyOther(View view, Editable editable, KeyEvent keyEvent) {
-                Toast.makeText(getApplicationContext(), "kay_Other : ", Toast.LENGTH_SHORT).show();
-                return false;
-            }
-
-            @Override
-            public void clearMetaKeyState(View view, Editable editable, int i) {
-
-            }
-        });
     }
 
     private void init(){

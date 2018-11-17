@@ -35,7 +35,7 @@
             <!--android:layout_width="18dp"-->
             <!--android:layout_height="18dp" />-->
 
-        <EditText
+        <AutoCompleteTextView
             android:id="@+id/input_search"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -55,11 +55,11 @@
         <Button
             android:id="@+id/btnSearch"
             android:text="GO"
-            android:background="@drawable/ic_magnify"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             android:layout_margin="12dp"
+            android:padding="0dp"
             android:layout_width="26dp"
             android:layout_height="26dp" />
 
@@ -72,6 +72,16 @@
         android:layout_margin="10dp"
         android:scaleType="center"
         android:src="@drawable/ic_gps"
+        android:layout_width="40dp"
+        android:layout_height="40dp" />
+
+    <ImageView
+        android:id="@+id/img_info"
+        app:layout_constraintTop_toBottomOf="@id/mapSearchLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="10dp"
+        android:scaleType="center"
+        android:src="@drawable/ic_info"
         android:layout_width="40dp"
         android:layout_height="40dp" />
 
