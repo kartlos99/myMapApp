@@ -492,7 +492,7 @@ public class MapActivity extends AppCompatActivity implements GoogleApiClient.On
 
         geofence = new Geofence.Builder()
                 .setRequestId(GEOFANCE_ID)
-                .setCircularRegion(41.73, 44.7625, 200f)
+                .setCircularRegion(41.781064, 44.7552548, 100f)
                 .setExpirationDuration(60 * 60 * 1000)
                 .setTransitionTypes(Geofence.GEOFENCE_TRANSITION_ENTER | Geofence.GEOFENCE_TRANSITION_EXIT)
                 .build();
@@ -557,18 +557,21 @@ public class MapActivity extends AppCompatActivity implements GoogleApiClient.On
     protected void onDestroy() {
         super.onDestroy();
 
-        geofencingClient.removeGeofences(getGeofencePendingIntent())
-                .addOnFailureListener(this, new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(getApplicationContext(), "can't Stop fance Monitoring", Toast.LENGTH_SHORT).show();
-                    }
-                })
-                .addOnSuccessListener(this, new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
-                        Toast.makeText(getApplicationContext(), "Stop fance Monitoring", Toast.LENGTH_SHORT).show();
-                    }
-                });
+        if(geofencingClient != null){
+            geofencingClient.removeGeofences(getGeofencePendingIntent())
+                    .addOnFailureListener(this, new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Toast.makeText(getApplicationContext(), "can't Stop fance Monitoring", Toast.LENGTH_SHORT).show();
+                        }
+                    })
+                    .addOnSuccessListener(this, new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void aVoid) {
+                            Toast.makeText(getApplicationContext(), "Stop fance Monitoring", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+        }
+
     }
 }

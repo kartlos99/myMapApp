@@ -30,7 +30,7 @@ public class CustomInfoWindowAdapter implements GoogleMap.InfoWindowAdapter {
         String snippet = marker.getSnippet();
         TextView tvSnippet = view.findViewById(R.id.snippet_text);
 
-        if(!snippet.equals("")){
+        if(snippet != null){
             tvSnippet.setText(snippet);
         }
 

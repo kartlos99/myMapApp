@@ -17,6 +17,7 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
@@ -26,7 +27,7 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_API_key" />
 
-        <activity android:name=".MapActivity"></activity>
+        <activity android:name=".MapActivity"/>
         <service android:name=".GeofenceTransitionsIntentService"/>
     </application>
 
